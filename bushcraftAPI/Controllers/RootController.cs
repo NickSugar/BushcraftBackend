@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace bushcraftAPI.Controllers
 {
     [Route("/")]
+    [ApiVersion("1.0")]
     public class RootController : Controller
     {
         [HttpGet(Name = nameof(GetRoot))]

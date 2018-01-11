@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using bushcraftAPI.Filters;
 using bushcraftAPI.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,8 @@ namespace bushcraftAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options => {
+                options.Filters.Add(typeof(JsonExceptionFilter));
+
                 var jsonFormatter = options.OutputFormatters.OfType<JsonOutputFormatter>().Single();
                 options.OutputFormatters.Remove(jsonFormatter);
                 options.OutputFormatters.Add(new IonOutputFormatter(jsonFormatter));

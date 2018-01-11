@@ -12,7 +12,9 @@ namespace bushcraftAPI.Controllers
         {
             var response = new
             {
-                href = Url.Link(nameof(GetRoot), null)
+                href = Url.Link(nameof(GetRoot), null),
+
+                gear = new { href = Url.Link(nameof(GearController.GetGear), null) }
             };
 
             return Ok(response);

@@ -72,6 +72,13 @@ namespace bushcraftAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHsts(options =>
+            {
+                options.MaxAge(days: 180);
+                options.IncludeSubdomains();
+                options.Preload();
+            });
+
             app.UseMvc();
         }
     }

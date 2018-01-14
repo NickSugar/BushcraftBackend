@@ -14,7 +14,9 @@ namespace bushcraftAPI.Controllers
             {
                 href = Url.Link(nameof(GetRoot), null),
 
-                gear = new { href = Url.Link(nameof(GearController.GetGear), null) }
+                gear = new { href = Url.Link(nameof(GearController.GetGear), null) },
+
+                gameInfo = new { href = Url.Link(nameof(GameInfoController.GetGameInfo), null)}
             };
 
             return Ok(response);

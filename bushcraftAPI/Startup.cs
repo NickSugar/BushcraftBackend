@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using bushcraftAPI.Models;
 
 namespace bushcraftAPI
 {
@@ -62,6 +63,8 @@ namespace bushcraftAPI
                 options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
             });
+
+            services.Configure<GameInfo>(Configuration.GetSection("GameInfo"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

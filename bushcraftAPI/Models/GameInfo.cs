@@ -9,11 +9,11 @@ namespace bushcraftAPI.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public string DesignerName { get; set; }
-        public ICollection<Designer> Designers { get; set; } 
+        public string Platform { get; set; }
+        public ICollection<Person> Designers { get; set; } 
     }
 
-    public class Designer
+    public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
